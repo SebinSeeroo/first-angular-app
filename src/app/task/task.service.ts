@@ -30,14 +30,17 @@ export class TaskService {
     ];
 
     constructor(){
-        const tasks =  localStorage.getItem('tasks');
+        debugger;
+        const tasksFromStorage =  localStorage.getItem('tasks');
 
-        if(tasks){
-            this.tasks = JSON.parse(tasks);
+        if(tasksFromStorage && tasksFromStorage !== "[]"){
+            debugger;
+            this.tasks = JSON.parse(tasksFromStorage);
         }
     }
 
     getUserTask(userId: string) {
+        debugger;
         return this.tasks.filter((task) => task.userId === userId);
     }
 

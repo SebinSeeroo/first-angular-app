@@ -1,15 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { SpecifictaskComponent } from "./specifictask/specifictask.component";
-import { NewTaskComponent } from "./new-task/new-task.component";
-import { NewTaskData } from './specifictask/specifictask.model';
 import { TaskService } from './task.service'; 
 
 @Component({
   selector: 'app-task',
-  standalone: true,
+  standalone: false,
   templateUrl: './task.component.html',
-  styleUrl: './task.component.css',
-  imports: [SpecifictaskComponent, NewTaskComponent]
+  styleUrl: './task.component.css'
 })
 export class TaskComponent {
   @Input() name?: string;
